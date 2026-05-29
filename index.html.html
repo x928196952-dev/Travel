@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çinə Səyahət Bələdçisi ✈️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1a5fa8;
+  --blue-dark: #0d3d70;
+  --blue-light: #e8f2ff;
+  --blue-mid: #4a8fd4;
+  --green: #0b6e4f;
+  --green-light: #e0f5ec;
+  --amber: #b45309;
+  --amber-light: #fef3c7;
+  --red: #991b1b;
+  --red-light: #fee2e2;
+  --gray-50: #f8f7f4;
+  --gray-100: #f0ede8;
+  --gray-200: #e4e0d8;
+  --gray-400: #9a958a;
+  --gray-600: #6b6660;
+  --gray-900: #1c1a17;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--gray-50);
+  color: var(--gray-900);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(145deg, var(--blue-dark) 0%, #1a5fa8 50%, #2563a8 100%);
+  padding: 3rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2rem;
+}
+.route {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.city {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.city .code {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 500;
+  display: block;
+  line-height: 1;
+}
+.city .name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 3px;
+}
+.city .time {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+.route-arrow {
+  color: rgba(255,255,255,0.35);
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.route-arrow small {
+  font-size: 10px;
+  font-family: var(--mono);
+  color: rgba(255,255,255,0.4);
+}
+.visa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── COUNTDOWN ── */
+.countdown-section {
+  background: #fff;
+  border-bottom: 1px solid var(--gray-200);
+}
+.countdown-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.countdown-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 1.2rem;
+}
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.cd-num {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+  min-width: 2.5ch;
+  display: block;
+}
+.cd-lbl {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+.cd-sep {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--gray-200);
+  align-self: center;
+  margin-top: -0.5rem;
+}
+.countdown-date {
+  margin-top: 1.2rem;
+  font-size: 13px;
+  color: var(--gray-400);
+}
+.countdown-done {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--green);
+  font-style: italic;
+}
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  color: var(--gray-600);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--sans);
+}
+.tab svg { width: 15px; height: 15px; stroke-width: 1.8; }
+.tab:hover { border-color: var(--blue); color: var(--blue); }
+.tab.on { background: var(--blue); color: #fff; border-color: var(--blue); }
+.section { display: none; animation: fadeIn .25s ease; }
+.section.on { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── SECTION HEADER ── */
+.sh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+.sh svg { width: 20px; height: 20px; stroke: var(--blue); }
+.sh h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+.divider { border: none; border-top: 1px solid var(--gray-200); margin-bottom: 1.2rem; }
+
+/* ── ALERTS ── */
+.alert {
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.alert svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; }
+.alert b { font-weight: 600; }
+.alert.blue { background: var(--blue-light); color: var(--blue-dark); border-left: 3px solid var(--blue); }
+.alert.green { background: var(--green-light); color: var(--green); border-left: 3px solid var(--green); }
+.alert.amber { background: var(--amber-light); color: var(--amber); border-left: 3px solid var(--amber); }
+.alert.red { background: var(--red-light); color: var(--red); border-left: 3px solid var(--red); }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.checklist li:last-child { border-bottom: none; }
+.ci {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ci svg { width: 14px; height: 14px; stroke-width: 2.5; }
+.ci.must { background: var(--blue-light); color: var(--blue); }
+.ci.rec { background: var(--green-light); color: var(--green); }
+.ci.opt { background: var(--gray-100); color: var(--gray-600); }
+.ci.danger { background: var(--red-light); color: var(--red); }
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-family: var(--mono);
+  letter-spacing: 0.5px;
+}
+.badge.must { background: var(--blue); color: #fff; }
+.badge.rec { background: var(--green); color: #fff; }
+.badge.opt { background: var(--gray-400); color: #fff; }
+.badge.danger { background: var(--red); color: #fff; }
+.check-title { font-weight: 600; color: var(--gray-900); }
+
+/* ── INTERACTIVE CHECKLIST ── */
+.ic-section {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.ic-header {
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ic-header h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.ic-progress-wrap { display: flex; align-items: center; gap: 10px; }
+.ic-count { font-size: 13px; font-family: var(--mono); color: var(--gray-600); }
+.progress-bar {
+  width: 100px; height: 6px;
+  background: var(--gray-200);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  border-radius: 100px;
+  transition: width .4s ease;
+}
+.ic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: background .15s;
+  user-select: none;
+}
+.ic-item:last-child { border-bottom: none; }
+.ic-item:hover { background: var(--gray-50); }
+.ic-item.checked { opacity: 0.55; }
+.ic-item.checked .ic-title { text-decoration: line-through; }
+.ic-checkbox {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all .2s;
+  background: #fff;
+}
+.ic-item.checked .ic-checkbox {
+  background: var(--green);
+  border-color: var(--green);
+}
+.ic-checkbox svg { width: 13px; height: 13px; stroke: #fff; stroke-width: 3; opacity: 0; transition: opacity .2s; }
+.ic-item.checked .ic-checkbox svg { opacity: 1; }
+.ic-title { font-size: 13.5px; font-weight: 600; color: var(--gray-900); }
+.ic-desc { font-size: 12px; color: var(--gray-600); margin-top: 2px; line-height: 1.5; }
+.ic-cat {
+  font-size: 10px;
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.ic-cat.must { background: var(--blue-light); color: var(--blue-dark); }
+.ic-cat.rec { background: var(--green-light); color: var(--green); }
+.ic-cat.opt { background: var(--gray-100); color: var(--gray-600); }
+.ic-cat.danger { background: var(--red-light); color: var(--red); }
+.ic-all-done {
+  text-align: center;
+  padding: 2rem;
+  display: none;
+}
+.ic-all-done.show { display: block; }
+.ic-all-done p { font-family: var(--serif); font-size: 1.3rem; font-style: italic; color: var(--green); }
+
+/* ── STEPS ── */
+.step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+.snum {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 14px;
+  color: #fff; flex-shrink: 0;
+}
+.snum.blue { background: var(--blue); }
+.snum.green { background: var(--green); }
+.snum.amber { background: var(--amber); }
+.sbody h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--gray-900); }
+.sbody p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+.sbody p b { font-weight: 600; color: var(--gray-900); }
+
+/* ── FLOW ── */
+.flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  margin: 12px 0 20px;
+}
+.fn {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.fn svg { width: 13px; height: 13px; }
+.fn.last { background: var(--green-light); color: var(--green); }
+.farr { color: var(--gray-400); font-size: 16px; }
+
+/* ── WIFI STEPS ── */
+.wifi-step {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--gray-900);
+  line-height: 1.5;
+}
+.wifi-step b { font-weight: 600; }
+.wn {
+  width: 22px; height: 22px;
+  background: var(--blue); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+
+/* ── APPS ── */
+.app-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.app-card:last-child { border-bottom: none; }
+.app-ico {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.07);
+}
+.app-body h3 { font-size: 14px; font-weight: 600; color: var(--gray-900); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.app-body p { font-size: 12px; color: var(--gray-600); margin-top: 4px; line-height: 1.5; }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-size: 12px;
+  color: var(--gray-400);
+  border-top: 1px solid var(--gray-200);
+  background: #fff;
+  font-family: var(--mono);
+  letter-spacing: 0.5px;
+}
+footer span { color: #e11d48; }
+
+@media (max-width: 500px) {
+  .cd-sep { display: none; }
+  .route { gap: 6px; }
+  .city .code { font-size: 18px; }
+  .tabs { gap: 4px; }
+  .tab { padding: 8px 13px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">✈ Səyahət Bələdçisi · 2026</div>
+    <h1>Çinə<br>Xoş Gəlmişsən!</h1>
+    <p class="hero-sub">Bakıdan Hangzhou'ya — addım-addım tam bələdçi</p>
+    <div class="route">
+      <div class="city">
+        <span class="code">GYD</span>
+        <span class="name">Bakı</span>
+        <span class="time">14 İyul · 21:25</span>
+      </div>
+      <div class="route-arrow">
+        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 7h24M18 1l6 6-6 6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <small>QR</small>
+      </div>
+      <div class="city">
+        <span class="code">DOH</span>
+        <span class="name">Doha · Tranzit</span>
+        <span class="time">14 İyul · 23:20</span>
+      </div>
+      <div class="route-arrow">
+        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 7h24M18 1l6 6-6 6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <small>QR · 9s15d</small>
+      </div>
+      <div class="city">
+        <span class="code">HGH</span>
+        <span class="name">Hangzhou</span>
+        <span class="time">15 İyul · 16:05</span>
+      </div>
+    </div>
+    <div class="visa-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Viza lazım deyil · 30 günə qədər pulsuz giriş
+    </div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="countdown-section">
+  <div class="countdown-inner">
+    <div class="countdown-label">Uçuşa qədər qalan vaxt</div>
+    <div id="cd-done" class="countdown-done" style="display:none">🎉 Uğurlu uçuşlar! Hangzhou'da görüşürük!</div>
+    <div class="countdown-grid" id="cd-grid">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">GÜN</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">SAAT</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">DƏQİQƏ</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">SANİYƏ</span></div>
+    </div>
+    <div class="countdown-date">Uçuş tarixi: 14 İyul 2026, 21:25 (Bakı vaxtı, UTC+4)</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab on" onclick="show('docs',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Sənədlər
+    </button>
+    <button class="tab" onclick="show('doha',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Doha
+    </button>
+    <button class="tab" onclick="show('hzarr',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.68 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.46-.46a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Hangzhou
+    </button>
+    <button class="tab" onclick="show('bagaj',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8" width="22" height="14" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      Bagaj Siyahısı
+    </button>
+    <button class="tab" onclick="show('apps',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      Tətbiqlər
+    </button>
+    <button class="tab" onclick="show('tips',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Məsləhətlər
+    </button>
+  </div>
+
+  <!-- DOCS -->
+  <div id="docs" class="section on">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <h2>Sənədlər və Hazırlıq</h2>
+    </div>
+    <hr class="divider">
+    <div class="alert green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div><b>Vizasız giriş!</b> Azərbaycan-Çin müqaviləsi 16 iyul 2025-dən qüvvəyə minib. Sən 15 iyul 2026-da gəlirsən — tamamilə vizasız! 30 günə qədər qala bilərsən.</div>
+    </div>
+    <ul class="checklist">
+      <li>
+        <div class="ci must"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><span class="check-title">Etibarlı pasport</span><span class="badge must">ŞƏRT</span><br><span style="font-size:12px;color:#6b6660">15 iyul 2026-dan sonra ən azı 6 ay müddəti olmalıdır. İndi yoxla!</span></div>
+      </li>
+      <li>
+        <div class="ci must"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><span class="check-title">Hər iki boarding pass</span><span class="badge must">ŞƏRT</span><br><span style="font-size:12px;color:#6b6660">Bakı→Doha və Doha→Hangzhou. Ekran görüntüsü al, həm telefonda həm kağızda saxla!</span></div>
+      </li>
+      <li>
+        <div class="ci danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><span class="check-title">VPN tətbiqi</span><span class="badge danger">ÇOX VACIB</span><br><span style="font-size:12px;color:#6b6660">Çinə gəlməmişdən ƏVVƏL yüklə! (ExpressVPN, NordVPN). Google, Instagram, WhatsApp Çindən bloklanıb — daxilindən yükləmək mümkün deyil!</span></div>
+      </li>
+      <li>
+        <div class="ci must"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><span class="check-title">Giriş kartını onlayn doldur</span><span class="badge must">ŞƏRT</span><br><span style="font-size:12px;color:#6b6660">"移民局12367" tətbiqi ilə uçuşdan əvvəl doldur. İmmiqrasiyada vaxt qənaət edir!</span></div>
+      </li>
+      <li>
+        <div class="ci rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><span class="check-title">Çindəki ünvan</span><span class="badge rec">TÖVSİYƏ</span><br><span style="font-size:12px;color:#6b6660">Sevgilinin evi/otelin ünvanını çin dilində yazılı saxla. İmmiqrasiya sora bilər.</span></div>
+      </li>
+      <li>
+        <div class="ci rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><span class="check-title">Geri dönüş bileti</span><span class="badge rec">TÖVSİYƏ</span><br><span style="font-size:12px;color:#6b6660">30 gün ərzində ayrılacağını sübut etmək üçün. Telefonda saxla.</span></div>
+      </li>
+      <li>
+        <div class="ci rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div><span class="check-title">Beynəlxalq SIM / eSIM</span><span class="badge rec">TÖVSİYƏ</span><br><span style="font-size:12px;color:#6b6660">Çin üçün eSIM al (Airalo, Nomad). Bakıda, uçuşdan əvvəl!</span></div>
+      </li>
+      <li>
+        <div class="ci rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div><span class="check-title">Nağd pul (USD/EUR)</span><span class="badge rec">TÖVSİYƏ</span><br><span style="font-size:12px;color:#6b6660">$100–200 ehtiyat üçün. Çin demək olar tamamilə rəqəmsal ödənişlə işləyir.</span></div>
+      </li>
+      <li>
+        <div class="ci opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div><span class="check-title">Elektrik adapteri</span><span class="badge opt">OPSİONAL</span><br><span style="font-size:12px;color:#6b6660">Çin Type A/C/I, 220V. Azərbaycan rozetləri (Type C/F) adətən işləyir.</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- DOHA -->
+  <div id="doha" class="section">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <h2>Doha — Tranzit Bələdçisi</h2>
+    </div>
+    <hr class="divider">
+    <div class="alert amber">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><b>Vacib!</b> Tranzit sərnişin kimi Qətər gömrükündən keçmirsən. Yalnız <b>bənövşəyi "Transfer / Gates"</b> işarəsini izlə!</div>
+    </div>
+    <div class="step">
+      <div class="snum blue">1</div>
+      <div class="sbody"><h3>Doha HIA'ya eniş (23:20)</h3><p>Dünyaca məşhur müasir hava limanı. Tek terminal, A–E konkorslardır. Heç bir gömrük proseduru yoxdur.</p></div>
+    </div>
+    <div class="step">
+      <div class="snum blue">2</div>
+      <div class="sbody"><h3>Bənövşəyi "Transfer" işarələrini izlə</h3><p>Terminal boyunca <b>bənövşəyi rəngli tranzit işarələri</b> sənə Hangzhou qapısını göstərəcək. Boarding passındakı qapı nömrəsinə bax!</p></div>
+    </div>
+    <div class="step">
+      <div class="snum blue">3</div>
+      <div class="sbody">
+        <h3>📶 Pulsuz Wi-Fi'ya qoşul</h3>
+        <p style="margin-bottom:10px">Tamamilə pulsuz, bütün terminal əhatəlidir:</p>
+        <div class="wifi-step"><div class="wn">1</div><div>Telefonda <b>Ayarlar → Wi-Fi</b> aç</div></div>
+        <div class="wifi-step"><div class="wn">2</div><div>Şəbəkəni seç: <b>"#HIAQatar"</b> və ya <b>"HIAQatar Complimentary WiFi"</b></div></div>
+        <div class="wifi-step"><div class="wn">3</div><div>Brauzer avtomatik açılacaq — açılmasa özün aç</div></div>
+        <div class="wifi-step"><div class="wn">4</div><div>Daxil olmaq üçün seç: <b>WhatsApp</b> (ən asan!) ya boarding pass</div></div>
+        <div class="wifi-step"><div class="wn">5</div><div>WhatsApp seçsən hazır mesajı "Göndər" ilə göndər. Qoşuldun! ✅</div></div>
+      </div>
+    </div>
+    <div class="alert green" style="margin-top:10px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div>Terminal boyunca <b>şarj stansiyaları</b> var! 50+ restoran, Starbucks, duty-free mağazalar.</div>
+    </div>
+    <div class="step" style="margin-top:14px">
+      <div class="snum amber">4</div>
+      <div class="sbody"><h3>Tranzit vaxtı: ~2.5 saat</h3><p>Uçuş: <b>01:50, 15 iyul → Hangzhou.</b> Qapıda <b>01:10-a qədər</b> ol! Boarding 40–45 dəq. əvvəl başlayır.</p></div>
+    </div>
+    <div class="alert blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+      <div>🌡️ <b>Hava limanı soyuqdur (~20°C)!</b> Yüngül ceket/kofta çantanda saxla.</div>
+    </div>
+  </div>
+
+  <!-- HANGZHOU -->
+  <div id="hzarr" class="section">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.68 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.46-.46a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <h2>Hangzhou T4 — Giriş Prosesi</h2>
+    </div>
+    <hr class="divider">
+    <div class="alert green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div>Sən <b>Terminal 4 (T4)</b>-ə enəcəksən. Sevgilin T4 Gəlişlər çıxışında səni gözləyir!</div>
+    </div>
+    <div class="flow">
+      <div class="fn">✈️ Eniş T4</div><div class="farr">→</div>
+      <div class="fn">🌡️ Sağlamlıq</div><div class="farr">→</div>
+      <div class="fn">🛂 İmmiqrasiya</div><div class="farr">→</div>
+      <div class="fn">🧳 Baqaj</div><div class="farr">→</div>
+      <div class="fn">🏛️ Gömrük</div><div class="farr">→</div>
+      <div class="fn last">❤️ Sevgili!</div>
+    </div>
+    <div class="step"><div class="snum green">1</div><div class="sbody"><h3>Sağlamlıq yoxlaması</h3><p>"Arrivals" (到达) işarələrini izlə. Qısa temperatur yoxlaması ola bilər — sadəcə keç.</p></div></div>
+    <div class="step"><div class="snum green">2</div><div class="sbody"><h3>İmmiqrasiya (边检) — Xarici Pasport</h3><p><b>"Foreigners" (外籍人员)</b> sırasına get. Hazırla: pasport + giriş kartı + geri dönüş bileti.<br>Məmur foto çəkəcək və barmaq izi skan edəcək — normaldır, bir neçə dəqiqə çəkir.</p></div></div>
+    <div class="alert blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div>💡 Giriş kartını <b>"移民局12367"</b> tətbiqi ilə uçuşdan əvvəl onlayn doldur — çox vaxt qənaət edir!</div>
+    </div>
+    <div class="step"><div class="snum green">3</div><div class="sbody"><h3>Baqajı götür (行李提取)</h3><p>Ekranda karusel nömrəni tap. Baqajlar enişdən <b>15–20 dəqiqə</b> sonra gəlir.</p></div></div>
+    <div class="step"><div class="snum green">4</div><div class="sbody"><h3>Gömrük (海关)</h3><p><b>Yaşıl kanal</b> (bəyan etmək üçün heç nə yoxdur). Turistlərin 99%-i buradan keçir.<br><span style="color:#991b1b">✗ Qadağandır: təzə meyvə, ət, bitkilər, $5,000+ nağd pul</span></p></div></div>
+    <div class="step"><div class="snum green">5</div><div class="sbody"><h3>Çıxış → Sevgili! ❤️</h3><p>Gömrükdən sonra <b>T4 Gəlişlər zalına</b> girirsən. <b>"出口 / EXIT"</b> işarələrini axtar. Sevgilin orada!</p></div></div>
+    <div class="alert green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div>Enişdən çıxışa qədər ümumiyyətlə <b>45–75 dəqiqə</b> çəkir. T4 müasir və yaxşı işarələnmiş terminaldir!</div>
+    </div>
+  </div>
+
+  <!-- BAGAJ SIYAHISI (interactive checklist) -->
+  <div id="bagaj" class="section">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><rect x="1" y="8" width="22" height="14" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      <h2>İnteraktiv Bagaj Siyahısı</h2>
+    </div>
+    <hr class="divider">
+    <div class="alert blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div>Hər maddəni hazırlayanda üzərini xaç et. Uçuşdan bir gün əvvəl yoxla!</div>
+    </div>
+
+    <div class="ic-section">
+      <div class="ic-header">
+        <h3>📋 Hazırlıq Siyahısı</h3>
+        <div class="ic-progress-wrap">
+          <span class="ic-count" id="ic-count">0 / 20</span>
+          <div class="progress-bar"><div class="progress-fill" id="ic-bar" style="width:0%"></div></div>
+        </div>
+      </div>
+      <div id="ic-list"></div>
+      <div class="ic-all-done" id="ic-done">
+        <p>🎉 Hamısı hazırdır! Xoş uçuşlar!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPS -->
+  <div id="apps" class="section">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      <h2>Lazım Olan Tətbiqlər</h2>
+    </div>
+    <hr class="divider">
+    <div class="alert amber">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><b>Hər şeyi Çinə gəlməmişdən ƏVVƏL yüklə!</b> Google Play Çin daxilindən bloklanıb. Bakıda et!</div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#07c160">💬</div>
+      <div class="app-body"><h3>WeChat (微信) <span class="badge must">ŞƏRT</span></h3><p>Çinin hər şey tətbiqi — mesajlaşma, ödənişlər, xəritələr. Sevgilinlə əlaqə üçün mütləq lazımdır. Bakıda hesab aç!</p></div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#c0392b">🛡️</div>
+      <div class="app-body"><h3>VPN (ExpressVPN / NordVPN) <span class="badge danger">ÇOX VACIB</span></h3><p>Çinə gəlməmişdən ƏVVƏL yüklə! Google, Instagram, WhatsApp, YouTube — hamısı bloklanıb. Çin daxilindən yükləmək mümkün deyil!</p></div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#1677ff">💳</div>
+      <div class="app-body"><h3>Alipay (支付宝) <span class="badge rec">TÖVSİYƏ</span></h3><p>Çin ödənişləri üçün. Beynəlxalq Visa/Mastercard kartı əlavə edib demək olar hər yerdə ödəyə bilərsən.</p></div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#0F6E56">🛂</div>
+      <div class="app-body"><h3>移民局12367 <span class="badge rec">TÖVSİYƏ</span></h3><p>Çin rəsmi imigraiya tətbiqi. Giriş kartını uçuşdan əvvəl doldur — immiqrasiyada çox vaxt qənaət edir!</p></div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#ff5722">🗺️</div>
+      <div class="app-body"><h3>Amap / 高德地图 <span class="badge rec">TÖVSİYƏ</span></h3><p>Google Maps Çin daxilindən yaxşı işləmir. Amap-ı yüklə — ingilis dili var, oflayn da işləyir!</p></div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico" style="background:#4285F4">🌐</div>
+      <div class="app-body"><h3>Google Translate (oflayn) <span class="badge opt">OPSİONAL</span></h3><p>Çin dilini oflayn paket yüklə. Baidu Translate VPN olmadan da işləyir.</p></div>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div id="tips" class="section">
+    <div class="sh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <h2>Vacib Məsləhətlər</h2>
+    </div>
+    <hr class="divider">
+    <div class="step"><div class="snum blue">📸</div><div class="sbody"><h3>Hər şeyin ekran görüntüsünü al</h3><p>Hər iki boarding pass, e-mail təsdiqlər, Hangzhoudakı ünvan, sevgilinin WeChat QR kodu. İnternet kəsilsə ekran görüntüləri sənin xilas edəcək.</p></div></div>
+    <div class="step"><div class="snum blue">🔋</div><div class="sbody"><h3>Telefonu şarjlı saxla</h3><p>Bir neçə yerdə QR kod və ya boarding pass göstərməli olacaqsan. Doha hava limanında 9 saatlıq uçuşdan əvvəl tam şarj et.</p></div></div>
+    <div class="step"><div class="snum blue">💳</div><div class="sbody"><h3>Alipay'i Bakıda qur</h3><p>Beynəlxalq Visa/Mastercard kartını Alipay'a əlavə et. Restoran, mağaza, taksi — demək olar hər yerdə ödəyə bilərsən.</p></div></div>
+    <div class="step"><div class="snum green">❤️</div><div class="sbody"><h3>Sevgili T4 çıxışında gözləyir</h3><p>Gömrükdən çıxdıqdan sonra <b>"出口 / EXIT"</b> işarələrini izlə. Sevgilin qapının xaricində, gəlişlər zalında səni gözləyir!</p></div></div>
+    <div class="step"><div class="snum amber">❄️</div><div class="sbody"><h3>Hər iki hava limanı soyuqdur</h3><p>Doha ~20°C, uçuşlar da soyuq olur. Çantanın üstündə yüngül kofta saxla.</p></div></div>
+    <div class="alert amber">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><b>Xatırla:</b> Çinə $5,000 USD-dən çox nağd pul gətirsən bəyan etməlisən. Təzə meyvə, ət və bitki toxumları qadağandır.</div>
+    </div>
+    <div class="alert green" style="margin-top:8px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div><b>Hər şey idarəolunaqdır!</b> Ən çətin hissə uzun uçuşdur. T4 müasir və yaxşı işarələnmiş terminaldir. Sevgilin qapıda səni gözləyir! ✈️</div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<footer>
+  Sevgilinlə hazırlanmışdır <span>♥</span> &nbsp;·&nbsp; 2026-cı il üçün yenilənmişdir &nbsp;·&nbsp; Xoş Uçuşlar!
+</footer>
+
+<script>
+// ── TABS ──
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  el.classList.add('on');
+}
+
+// ── COUNTDOWN ──
+function updateCountdown() {
+  // 14 July 2026, 21:25, Baku time (UTC+4)
+  const target = new Date('2026-07-14T17:25:00Z'); // UTC equivalent
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('cd-grid').style.display = 'none';
+    document.getElementById('cd-done').style.display = 'block';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── INTERACTIVE CHECKLIST ──
+const items = [
+  { cat:'must', title:'Pasport', desc:'Ən azı 6 aylıq müddəti olmalıdır (15 İyul 2026-dan sonra)' },
+  { cat:'must', title:'Boarding pass — Bakı → Doha', desc:'Ekran görüntüsü + kağız surəti saxla' },
+  { cat:'must', title:'Boarding pass — Doha → Hangzhou', desc:'Ekran görüntüsü + kağız surəti saxla' },
+  { cat:'danger', title:'VPN tətbiqi (yüklənib & işləyir)', desc:'ExpressVPN, NordVPN — Çinə gəlməmişdən ƏVVƏL yüklə!' },
+  { cat:'must', title:'Giriş kartı onlayn doldurulub', desc:'"移民局12367" tətbiqi ilə uçuşdan əvvəl doldur' },
+  { cat:'must', title:'WeChat hesabı açılıb', desc:'Bakıda hesab aç, sevgilinlə əlaqəni yoxla' },
+  { cat:'rec', title:'Alipay qurulub', desc:'Beynəlxalq kart əlavə edilib' },
+  { cat:'rec', title:'eSIM / SIM kart alınıb', desc:'Çin üçün (Airalo, Nomad)' },
+  { cat:'rec', title:'Amap (高德地图) yüklənib', desc:'Çin xəritəsi, oflayn da işləyir' },
+  { cat:'rec', title:'Geri dönüş bileti telefonda', desc:'30 gün ərzində ayrılacağını sübut et' },
+  { cat:'rec', title:'Çindəki ünvan yazılı', desc:'Sevgilinin evinin ünvanı (çin dilində)' },
+  { cat:'rec', title:'Nağd pul hazırlanıb', desc:'$100–200 USD və ya EUR ehtiyat üçün' },
+  { cat:'must', title:'Telefon tam şarj', desc:'Uçuşdan əvvəl 100% şarj et' },
+  { cat:'opt', title:'Elektrik adapteri', desc:'Type C/F → A adapteri (lazım olarsa)' },
+  { cat:'opt', title:'Yüngül ceket/kofta çantada', desc:'Doha ~20°C, uçuşlar soyuq olur' },
+  { cat:'rec', title:'Google Translate oflayn paketi', desc:'Çin dilini oflayn yüklə' },
+  { cat:'opt', title:'Boyun yastığı', desc:'9 saatlıq uçuş üçün' },
+  { cat:'opt', title:'Qulaqlıq', desc:'Uzun uçuş üçün' },
+  { cat:'must', title:'Hər şeyin ekran görüntüsü', desc:'Bilet, ünvan, WeChat QR — hamısını saxla' },
+  { cat:'rec', title:'Ailə/dostları məlumatlandır', desc:'Uçuş cədvəlini paylaş' },
+];
+
+const catLabel = { must:'ŞƏRT', rec:'TÖVSİYƏ', opt:'OPSİONAL', danger:'ÇOX VACIB' };
+let checked = new Array(items.length).fill(false);
+
+function renderChecklist() {
+  const list = document.getElementById('ic-list');
+  list.innerHTML = '';
+  items.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'ic-item' + (checked[i] ? ' checked' : '');
+    div.innerHTML = `
+      <div class="ic-checkbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div style="flex:1">
+        <div class="ic-title">${item.title}</div>
+        <div class="ic-desc">${item.desc}</div>
+      </div>
+      <div class="ic-cat ${item.cat}">${catLabel[item.cat]}</div>
+    `;
+    div.onclick = () => {
+      checked[i] = !checked[i];
+      renderChecklist();
+    };
+    list.appendChild(div);
+  });
+  const total = items.length;
+  const done = checked.filter(Boolean).length;
+  document.getElementById('ic-count').textContent = done + ' / ' + total;
+  document.getElementById('ic-bar').style.width = (done/total*100) + '%';
+  const allDone = document.getElementById('ic-done');
+  if (done === total) { allDone.classList.add('show'); }
+  else { allDone.classList.remove('show'); }
+}
+renderChecklist();
+</script>
+</body>
+</html>
